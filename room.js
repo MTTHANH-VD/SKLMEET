@@ -3,7 +3,7 @@ const params = new URLSearchParams(window.location.search);
 const myName = params.get("name") || "Người dùng";
 document.getElementById("usernameDisplay").innerText = myName;
 
-const serverUrl = "ws://localhost:3000";
+const serverUrl = "wss://your-worker-name.username.workers.dev";
 const socket = new WebSocket(serverUrl);
 
 const videoGrid = document.getElementById("videoGrid");
