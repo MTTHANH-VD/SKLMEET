@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cuộc họp — Meet Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html,body { height:100%; }
+    .video-box { position: relative; border-radius: 12px; overflow: hidden; background:#000; }
+    .name-label {
+      position: absolute; left:8px; bottom:8px;
+      background: rgba(0,0,0,0.6); padding:6px 8px; border-radius:8px; font-size:14px;
+    }
+    .speaking {
+      outline: 4px solid #34d399; /* xanh khi đang nói */
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+
+  <!-- top bar -->
+  <div class="h-16 bg-gray-800 flex items-center justify-between px-4 border-b border-gray-700">
+    <div class="flex items-center gap-3">
+      <div class="text-lg font-semibold">Meet Clone</div>
+      <div id="roomInfo" class="text-sm opacity-80">Phòng công khai</div>
+    </div>
+    <div id="usernameDisplay" class="opacity-80"></div>
+  </div>
+
+  <!-- video grid -->
+  <main class="flex-1 p-4">
+    <div id="videoGrid" class="grid gap-4" style="grid-template-columns: repeat(auto-fit,minmax(220px,1fr));"></div>
+  </main>
+
+  <!-- bottom control -->
+  <div class="h-20 bg-gray-800 border-t border-gray-700 flex items-center justify-center gap-6 px-4">
+    <button id="toggleMic" class="w-14 h-14 rounded-full bg-gray-700 flex items-center justify-center text-xl">🎤</button>
+    <button id="toggleCam" class="w-14 h-14 rounded-full bg-gray-700 flex items-center justify-center text-xl">📷</button>
+    <button id="shareBtn" class="w-14 h-14 rounded-full bg-gray-700 flex items-center justify-center text-xl">🖥️</button>
+    <button id="leaveBtn" class="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center text-xl">📞</button>
+  </div>
+
+  <script src="room.js"></script>
+</body>
+</html>

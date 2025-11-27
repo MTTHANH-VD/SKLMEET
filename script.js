@@ -1,0 +1,1 @@
+const input=document.getElementById("username");const joinBtn=document.getElementById("joinBtn");input.addEventListener("input",()=>{joinBtn.disabled=input.value.trim()==="";});joinBtn.addEventListener("click",()=>{const name=input.value.trim();window.location.href=`room.html?name=${name}`;});
